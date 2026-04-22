@@ -5,6 +5,7 @@ function Pre() {
   const [isValid, setIsValid] = useState(false);
   const [entered, setEntered] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const [showSkip, setShowSkip] = useState(false);
 
   // Check if user already entered before
   useEffect(() => {
@@ -12,6 +13,14 @@ function Pre() {
     if (saved) {
       setEntered(true);
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSkip(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -42,7 +51,8 @@ function Pre() {
     setEntered(true);
 
     try {
-      
+      console.log("Entered 1");
+
       await fetch(
         "https://script.google.com/macros/s/AKfycbyB6OXOJBg1eRpfCsfN-nk_8novLcVHS0qbi6kJN_3ovWnxPeGwkM9U1m4oNQpi7E3CVA/exec",
         {
@@ -54,6 +64,7 @@ function Pre() {
           body: `name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`,
         },
       );
+      console.log("Entered 2");
 
       localStorage.setItem("portfolioUser", JSON.stringify(user));
     } catch (err) {
@@ -103,13 +114,15 @@ function Pre() {
           )}
 
           {/* ✅ Skip option */}
-          // <button
-          //   type="button"
-          //   onClick={() => setEntered(true)}
-          //   style={styles.skip}
-          // >
-          //   Skip
-          // </button>
+          {showSkip && (
+            <button
+              type="button"
+              onClick={() => setEntered(true)}
+              style={styles.skip}
+            >
+              Skip
+            </button>
+          )}
         </form>
       </div>
     );
@@ -164,7 +177,7 @@ const styles = {
     cursor: "pointer",
   },
   skip: {
-    marginTop: "5px",
+    marginTop: "2px",
     background: "transparent",
     border: "none",
     color: "#94a3b8",
