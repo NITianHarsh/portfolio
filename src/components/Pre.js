@@ -42,8 +42,7 @@ function Pre() {
     setEntered(true);
 
     try {
-      console.log("Entered 1");
-
+      
       await fetch(
         "https://script.google.com/macros/s/AKfycbyB6OXOJBg1eRpfCsfN-nk_8novLcVHS0qbi6kJN_3ovWnxPeGwkM9U1m4oNQpi7E3CVA/exec",
         {
@@ -55,7 +54,6 @@ function Pre() {
           body: `name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`,
         },
       );
-      console.log("Entered 2");
 
       localStorage.setItem("portfolioUser", JSON.stringify(user));
     } catch (err) {
@@ -105,13 +103,13 @@ function Pre() {
           )}
 
           {/* ✅ Skip option */}
-          <button
-            type="button"
-            onClick={() => setEntered(true)}
-            style={styles.skip}
-          >
-            Skip
-          </button>
+          // <button
+          //   type="button"
+          //   onClick={() => setEntered(true)}
+          //   style={styles.skip}
+          // >
+          //   Skip
+          // </button>
         </form>
       </div>
     );
