@@ -13,38 +13,45 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a Final Year Student who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored different
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              I’m a final-year Mechanical Engineering student who developed a
+              strong passion for software development and data-driven problem
+              solving. Currently working as an{" "}
+              <b className="purple">SDE Intern at Ada</b>, I focus on building
+              scalable, production-ready applications that deliver real-world
+              impact.
               <br />
-              <br />
-              I’m proficient in
+              <br />I have hands-on experience across
               <i>
                 <b className="purple">
                   {" "}
-                  JavaScript, C++, Node.js and SQL{" "}
+                  MERN Stack, PostgreSQL, Python and Data Structures &
+                  Algorithms{" "}
                 </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
+              — with a strong interest in backend engineering and system design.
               <br />
               <br />
-              My key areas of interest include developing
+              During my internship, I’ve contributed to a
               <i>
                 <b className="purple">
                   {" "}
-                  Web Development, Data Structures and Algorithms,{" "}
+                  multi-tenant SaaS communication platform{" "}
                 </b>
               </i>
-              and exploring new ways to optimize and build user-freindly systems.
+              by implementing features like role-based access control, automated
+              testing, and a cron-based report scheduling system with
+              multi-channel delivery via Email, SFTP, and cloud storage (S3).
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
-              <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Express.js</b>.
-              </i>
+              I also enjoy working with data — analyzing large datasets and
+              transforming them into meaningful insights to support business
+              decisions.
+              <br />
+              <br />
+              I’m particularly interested in building
+              <b className="purple"> scalable backend systems </b>
+              and creating efficient, user-focused applications that solve
+              real-world problems.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

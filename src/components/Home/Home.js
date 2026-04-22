@@ -3,12 +3,8 @@ import Type from "./Type";
 import Home2 from "./Home2";
 import Particle from "../Particle";
 import Techstack from "../About/Techstack";
-import { FaLinkedinIn } from "react-icons/fa";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import homeLogo from "../../Assets/home-main.svg";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -80,12 +76,22 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com/nitianharsh"
+                  href="https://www.instagram.com/harshit.create/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
                   <AiFillInstagram />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://wa.me/918923887653?text=Hi%20Harshit%20👋"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                >
+                  <FaWhatsapp />
                 </a>
               </li>
             </ul>

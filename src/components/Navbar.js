@@ -1,12 +1,12 @@
 import Nav from "react-bootstrap/Nav";
 import logo from "../Assets/logo.png";
-import { ImBlog } from "react-icons/im";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import { CgFileDocument } from "react-icons/cg";
+import { FaBriefcase } from "react-icons/fa";
 import Container from "react-bootstrap/Container";
 import {
   AiFillStar,
@@ -79,6 +79,19 @@ function NavBar() {
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/internship"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaBriefcase
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Internships
               </Nav.Link>
             </Nav.Item>
 
