@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from "react";
 
 function Pre() {
-  const [user, setUser] = useState({ name: "", email: "" });
-  const [isValid, setIsValid] = useState(false);
-  const [entered, setEntered] = useState(false);
-  const [showLoader, setShowLoader] = useState(false);
-  const [showSkip, setShowSkip] = useState(false);
+  //const [user, setUser] = useState({ name: "", email: "" });
+  //const [isValid, setIsValid] = useState(false);
+  //const [entered, setEntered] = useState(false);
+
+  const [showLoader, setShowLoader] = useState(true);
+  //const [showSkip, setShowSkip] = useState(false);
+
+  // 🔹 Initial loader only
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Check if user already entered before
+  /*
   useEffect(() => {
     const saved = localStorage.getItem("portfolioUser");
     if (saved) {
       setEntered(true);
     }
   }, []);
+  */
 
+  /*
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSkip(true);
@@ -22,7 +35,9 @@ function Pre() {
 
     return () => clearTimeout(timer);
   }, []);
+  */
 
+  /*
   useEffect(() => {
     const nameValid = user.name.trim().length >= 3;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
@@ -30,8 +45,10 @@ function Pre() {
 
     setIsValid(nameValid && emailValid);
   }, [user]);
+  */
 
   // Start loader AFTER entering
+  /*
   useEffect(() => {
     if (entered) {
       setShowLoader(true);
@@ -43,7 +60,9 @@ function Pre() {
       return () => clearTimeout(timer);
     }
   }, [entered]);
+  */
 
+  /*
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isValid) return;
@@ -51,28 +70,24 @@ function Pre() {
     setEntered(true);
 
     try {
-      console.log("Entered 1");
-
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbyB6OXOJBg1eRpfCsfN-nk_8novLcVHS0qbi6kJN_3ovWnxPeGwkM9U1m4oNQpi7E3CVA/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: `name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`,
+      await fetch("YOUR_GOOGLE_SCRIPT_URL", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-      );
-      console.log("Entered 2");
+        body: `name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`,
+      });
 
       localStorage.setItem("portfolioUser", JSON.stringify(user));
     } catch (err) {
       console.error("Error:", err);
     }
   };
+  */
 
   // 🔹 Step 1: Show form
+  /*
   if (!entered) {
     return (
       <div style={styles.container}>
@@ -110,10 +125,11 @@ function Pre() {
           </button>
 
           {!isValid && (
-            <p style={styles.error}>Name ≥ 3 chars & valid email required</p>
+            <p style={styles.error}>
+              Name ≥ 3 chars & valid email required
+            </p>
           )}
 
-          {/* ✅ Skip option */}
           {showSkip && (
             <button
               type="button"
@@ -127,6 +143,7 @@ function Pre() {
       </div>
     );
   }
+  */
 
   // 🔹 Step 2: Show loader
   if (showLoader) {
@@ -137,6 +154,7 @@ function Pre() {
   return null;
 }
 
+/*
 const styles = {
   container: {
     position: "fixed",
@@ -189,5 +207,6 @@ const styles = {
     fontSize: "12px",
   },
 };
+*/
 
 export default Pre;
